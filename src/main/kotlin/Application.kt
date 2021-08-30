@@ -12,6 +12,7 @@ do {
     val pemain = Pemain()
     pemain.prosesSuit()
 
+
 }while(ulangGame()==true)
 
 }
