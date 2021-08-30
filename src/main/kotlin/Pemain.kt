@@ -8,18 +8,23 @@ open class Pemain() {
         pemain1 = readLine().toString().uppercase()
         println("Masukkan nama Pemain 2 :")
         pemain2 = readLine().toString().uppercase()
-        println("Masukkan pilihan $pemain1:")
-        pilihan1 = readLine().toString().lowercase()
-        println("Masukkan pilihan $pemain2:")
-        pilihan2 = readLine().toString().lowercase()
 
-        val hasil = Hasil(pemain1,pemain2,pilihan1,pilihan2)
+        do {
+            println("Masukkan pilihan $pemain1:")
+            pilihan1 = readLine().toString().lowercase()
+            println("Masukkan pilihan $pemain2:")
+            pilihan2 = readLine().toString().lowercase()
+
+            val valid = Validator()
+            valid.validasi(pilihan1, pilihan2)
+
+
+
+        } while (!valid.validasi(pilihan1, pilihan2))
+
+        val hasil = Hasil(pemain1, pemain2, pilihan1, pilihan2)
         hasil.cekHasil()
 
     }
-
-
-
-
 }
 
